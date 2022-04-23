@@ -37,9 +37,9 @@ guessBtn.addEventListener('click', function(){
   let guess = parseInt(guessInput.value);
 
   // Validate
-  if(isNaN(guess) || guess < min || guess > max){
-    setMessage(`Please enter a number between ${min} and ${max}`, 'red');
-  }
+  // if(Number.isNaN() || guess < min || guess > max){
+  //   setMessage(`Please enter a number between ${min} and ${max}`, 'red');
+  // }
 
   // Check if won
   if(guess === winningNum){
@@ -65,6 +65,11 @@ guessBtn.addEventListener('click', function(){
       // Tell user its the wrong number
       setMessage(`${guess} is not correct, ${guessesLeft} guesses left`, 'red');
     }
+  }
+
+  // Validate
+  if(Number.isNaN(guess) || guess < min || guess > max){
+    setMessage(`Please enter a number between ${min} and ${max}`, 'red');
   }
 });
 
